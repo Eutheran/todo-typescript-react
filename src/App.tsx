@@ -21,9 +21,17 @@ const App: React.FunctionComponent = () => {
     setTodos(newTodos);
   };
 
+  const addTodo: AddTodo = newTodo => {
+    setTodos([...todos, { text: newTodo, complete: false }]);
+  };
+
   return (
     <>
-      <TodoListContainer todos={todos} toggleTodo={toggleTodo} />
+      <TodoListContainer
+        todos={todos}
+        toggleTodo={toggleTodo}
+        addTodo={addTodo}
+      />
     </>
   );
 };
