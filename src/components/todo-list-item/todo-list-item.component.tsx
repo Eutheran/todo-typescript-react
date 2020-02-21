@@ -8,8 +8,8 @@ interface TodoListeItemProps {
   toggleTodo: ToggleTodo;
 }
 
-//destructuring what is passed in for easy access
-export const ToDoListItem: React.FunctionComponent<TodoListeItemProps> = ({
+//destructuring what is passed in for easy access to items
+export const TodoListItem: React.FunctionComponent<TodoListeItemProps> = ({
   todo,
   toggleTodo,
 }) => {

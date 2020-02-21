@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ToDoListItem } from "./components/todo-list-item/todo-list-item.component";
+import { TodoListContainer } from "./components/todo-list-container/todo-list-container.component";
 
 const initialTodos: Array<Todo> = [
   { text: "walk the dog", complete: true },
@@ -22,15 +22,9 @@ const App: React.FunctionComponent = () => {
   };
 
   return (
-    <div className="container">
-      {todos.map(todo => {
-        return (
-          <>
-            <ToDoListItem todo={todo} toggleTodo={toggleTodo} />
-          </>
-        );
-      })}
-    </div>
+    <>
+      <TodoListContainer todos={todos} toggleTodo={toggleTodo} />
+    </>
   );
 };
 
