@@ -13,7 +13,7 @@ const App: React.FunctionComponent = () => {
   //to declare what selectedTodo will follow
   const toggleTodo: ToggleTodo = selectedTodo => {
     const newTodos = todos.map(todo => {
-      if ((todo = selectedTodo)) {
+      if (todo === selectedTodo) {
         return { ...todo, complete: !todo.complete };
       }
       return todo;
@@ -22,11 +22,13 @@ const App: React.FunctionComponent = () => {
   };
 
   const addTodo: AddTodo = newTodo => {
-    setTodos([...todos, { text: newTodo, complete: false }]);
+    if (newTodo.length !== 0)
+      setTodos([...todos, { text: newTodo, complete: false }]);
   };
 
   return (
     <>
+      <h2>Todo List App:</h2>
       <TodoListContainer
         todos={todos}
         toggleTodo={toggleTodo}

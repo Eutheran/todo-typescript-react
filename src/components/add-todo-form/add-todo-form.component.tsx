@@ -15,14 +15,15 @@ export const AddTodoForm: React.FunctionComponent<AddTodoFormProps> = ({
     setNewTodo(event.target.value);
   };
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event: FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     addTodo(newTodo);
+    setNewTodo("");
   };
 
   return (
     <form>
-      <input type="text" onChange={handleChange} />
+      <input type="text" value={newTodo} onChange={handleChange} />
       <button type="submit" onClick={handleSubmit}>
         Add To List
       </button>
