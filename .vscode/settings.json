@@ -1,0 +1,6 @@
+{
+  "prettier.packageManager": "yarn",
+  "prettier.trailingComma": "es5",
+  "prettier.useEditorConfig": false,
+  "editor.formatOnSave": true
+}
